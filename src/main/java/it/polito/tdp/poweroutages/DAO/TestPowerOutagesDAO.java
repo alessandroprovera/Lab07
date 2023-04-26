@@ -2,6 +2,8 @@ package it.polito.tdp.poweroutages.DAO;
 
 import java.sql.Connection;
 
+import it.polito.tdp.poweroutages.model.Nerc;
+
 public class TestPowerOutagesDAO {
 
 	public static void main(String[] args) {
@@ -13,7 +15,7 @@ public class TestPowerOutagesDAO {
 			
 			PowerOutageDAO dao = new PowerOutageDAO() ;
 			
-			System.out.println(dao.getNercList()) ;
+			System.out.println(dao.getPowerOutagesByNerc(new Nerc(14,"SERC")).toString());
 
 		} catch (Exception e) {
 			System.err.println("Test FAILED");
